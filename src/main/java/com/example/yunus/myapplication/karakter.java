@@ -4,6 +4,7 @@ public class karakter {
     int kilo;
     int saldiriGucu;
      int hareketSayisi;
+     String isim="karaktere isim veriniz";
 
     public String yemek(){
         if (hareketSayisi>0){
@@ -35,6 +36,6 @@ public class karakter {
 
     @Override
     public String toString() {
-        return " kilo "+kilo+"\n saldırı gücü"+saldiriGucu+"\n hareket sayısı "+hareketSayisi;
+        return "karakterin ismi "+isim+"\n kilo "+kilo+"\n saldırı gücü"+saldiriGucu+"\n hareket sayısı "+hareketSayisi;
     }
 }

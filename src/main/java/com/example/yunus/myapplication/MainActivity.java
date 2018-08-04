@@ -2,12 +2,14 @@ package com.example.yunus.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements OnClickListener {
+public class MainActivity extends AppCompatActivity implements OnClickListener, EditText.OnEditorActionListener {
     int sayac = 0;
     TextView tv1;
     TextView tv2;
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     Button b2;
     Button b3;
     karakter k = new karakter();
+    EditText isim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         k.hareketSayisi = 10;
         tv1.setText(k.toString());
         tv2.setText("oyuna hoşgeldiniz, lütfen bir eylem seçiniz");
+        isim = findViewById(R.id.editText);
+        isim.setOnEditorActionListener(this);
+    }
+
+    @Override
+    public boolean onEditorAction(TextView tv, int x, KeyEvent ke){
+        tv2.setText("karakterin ismi "+ isim.getText()+" olarak atandı");
+        k.isim = (String) isim.getText().toString();
+        tv1.setText(k.toString());
+        tv1.setVisibility(View.VISIBLE);
+        isim.setVisibility(View.INVISIBLE);
+        return true;
     }
 
     @Override

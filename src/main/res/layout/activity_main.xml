@@ -18,7 +18,8 @@
             android:id="@+id/tv1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="30dp" />
+            android:padding="30dp"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/b1"
@@ -37,6 +38,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/uyu" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="karakterin ismini giriniz" />
 
         <TextView
             android:id="@+id/tv2"
